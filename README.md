@@ -24,4 +24,7 @@ This desktop application is very useful for school data management. This applica
 ```
   IT20614676 - Sandeepa U.W.P.S
   IT20617714 - Wijayawardhana D.S
+  IT20600198 - Samarasinghe W.D.S.C
+  IT20626792 - Amarakoon A.R.W.M.M.L.O
+  IT20603854 - Gunasekara M.T.D
 ```
