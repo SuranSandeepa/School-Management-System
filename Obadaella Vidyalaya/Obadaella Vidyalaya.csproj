@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F99311E3-93E6-40A2-9251-27812E04607C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Obadaella_Vidyalaya</RootNamespace>
+    <AssemblyName>Obadaella Vidyalaya</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSalaryDetail.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Attendance.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Register.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Tasks.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event Management Function\AddSpecialNotices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event Management Function\AddSpecialNotices.Designer.cs">
+      <DependentUpon>AddSpecialNotices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportEmpAttendance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEmpAttendance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportEmployeeDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEmployeeDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportEmpSalaryDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEmpSalaryDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportEventCreate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEventCreate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportExamTimetable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportExamTimetable.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSpecialNotice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSpecialNotice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportStdPaymentDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportStdPaymentDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportTT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmpAttendanceReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmpAttendanceReports.Designer.cs">
+      <DependentUpon>EmpAttendanceReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeAttendancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeAttendancePage.Designer.cs">
+      <DependentUpon>EmployeeAttendancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeHomePage.Designer.cs">
+      <DependentUpon>EmployeeHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeRegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeRegisterPage.Designer.cs">
+      <DependentUpon>EmployeeRegisterPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeReports.Designer.cs">
+      <DependentUpon>EmployeeReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event Management Function\EventCreatePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event Management Function\EventCreatePage.Designer.cs">
+      <DependentUpon>EventCreatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event Management Function\EventCreateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event Management Function\EventCreateReport.Designer.cs">
+      <DependentUpon>EventCreateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event Management Function\EventManagementHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event Management Function\EventManagementHome.Designer.cs">
+      <DependentUpon>EventManagementHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events_Create.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamHomeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamHomeManagement.Designer.cs">
+      <DependentUpon>ExamHomeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamHallManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamHallManagement.Designer.cs">
+      <DependentUpon>ExamHallManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamResultsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamResultsManagement.Designer.cs">
+      <DependentUpon>ExamResultsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamTimetableManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamTimetableManagement.Designer.cs">
+      <DependentUpon>ExamTimetableManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamTimetableReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Management Function\ExamTimetableReports.Designer.cs">
+      <DependentUpon>ExamTimetableReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hall.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notice_Create.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\EmpSalaryRepors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\EmpSalaryRepors.Designer.cs">
+      <DependentUpon>EmpSalaryRepors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\EmployeeSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\EmployeeSalary.Designer.cs">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\EmployeeSalarysDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\EmployeeSalarysDetailsView.Designer.cs">
+      <DependentUpon>EmployeeSalarysDetailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeesAttendanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeesAttendanceView.Designer.cs">
+      <DependentUpon>EmployeesAttendanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeesDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeesDetailsView.Designer.cs">
+      <DependentUpon>EmployeesDetailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeTaskPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Function\EmployeeTaskPage.Designer.cs">
+      <DependentUpon>EmployeeTaskPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginRegisterPage.Designer.cs">
+      <DependentUpon>LoginRegisterPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHomePage.Designer.cs">
+      <DependentUpon>MainHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\PaymentHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\PaymentHome.Designer.cs">
+      <DependentUpon>PaymentHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Payment Management Function\Student Payments Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\Student Payments Page.Designer.cs">
+      <DependentUpon>Student Payments Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\StudentPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\StudentPaymentView.Designer.cs">
+      <DependentUpon>StudentPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Management Function\StudentPaymentReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment Management Function\StudentPaymentReports.Designer.cs">
+      <DependentUpon>StudentPaymentReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event Management Function\SNReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event Management Function\SNReport.Designer.cs">
+      <DependentUpon>SNReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPayment.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTEdit.Designer.cs">
+      <DependentUpon>TTEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTMainPage.Designer.cs">
+      <DependentUpon>TTMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetable Management Function\TTReport.Designer.cs">
+      <DependentUpon>TTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TT.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Table.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Event Management Function\AddSpecialNotices.resx">
+      <DependentUpon>AddSpecialNotices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportEmpAttendance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportEmpAttendance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportEmployeeDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportEmployeeDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportEmpSalaryDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportEmpSalaryDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportEventCreate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportEventCreate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportExamTimetable.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportExamTimetable.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSpecialNotice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSpecialNotice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportStdPaymentDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportStdPaymentDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportTT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmpAttendanceReports.resx">
+      <DependentUpon>EmpAttendanceReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeeAttendancePage.resx">
+      <DependentUpon>EmployeeAttendancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeeHomePage.resx">
+      <DependentUpon>EmployeeHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeeRegisterPage.resx">
+      <DependentUpon>EmployeeRegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeeReports.resx">
+      <DependentUpon>EmployeeReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event Management Function\EventCreatePage.resx">
+      <DependentUpon>EventCreatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event Management Function\EventCreateReport.resx">
+      <DependentUpon>EventCreateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event Management Function\EventManagementHome.resx">
+      <DependentUpon>EventManagementHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Management Function\ExamHomeManagement.resx">
+      <DependentUpon>ExamHomeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Management Function\ExamHallManagement.resx">
+      <DependentUpon>ExamHallManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Management Function\ExamResultsManagement.resx">
+      <DependentUpon>ExamResultsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Management Function\ExamTimetableManagement.resx">
+      <DependentUpon>ExamTimetableManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Management Function\ExamTimetableReports.resx">
+      <DependentUpon>ExamTimetableReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\EmpSalaryRepors.resx">
+      <DependentUpon>EmpSalaryRepors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\EmployeeSalary.resx">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\EmployeeSalarysDetailsView.resx">
+      <DependentUpon>EmployeeSalarysDetailsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeesAttendanceView.resx">
+      <DependentUpon>EmployeesAttendanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeesDetailsView.resx">
+      <DependentUpon>EmployeesDetailsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Function\EmployeeTaskPage.resx">
+      <DependentUpon>EmployeeTaskPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginRegisterPage.resx">
+      <DependentUpon>LoginRegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHomePage.resx">
+      <DependentUpon>MainHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\PaymentHome.resx">
+      <DependentUpon>PaymentHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Payment Management Function\Student Payments Page.resx">
+      <DependentUpon>Student Payments Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\StudentPaymentView.resx">
+      <DependentUpon>StudentPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment Management Function\StudentPaymentReports.resx">
+      <DependentUpon>StudentPaymentReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event Management Function\SNReport.resx">
+      <DependentUpon>SNReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetable Management Function\TTEdit.resx">
+      <DependentUpon>TTEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetable Management Function\TTMainPage.resx">
+      <DependentUpon>TTMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetable Management Function\TTReport.resx">
+      <DependentUpon>TTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DBModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBModels.edmx.diagram">
+      <DependentUpon>DBModels.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+      <LastGenOutput>DBModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+      <LastGenOutput>DBModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\Employee Management\Employee Management Background.jpg" />
+    <Content Include="Images\For All Functions\Home Background.jpg" />
+    <Content Include="Images\For All Functions\Login Page - %28EYE%29.png" />
+    <Content Include="Images\For All Functions\Login Page - %28LOCK%29.png" />
+    <Content Include="Images\For All Functions\Back Arrow.png" />
+    <Content Include="Images\For All Functions\School Icon.png" />
+    <Content Include="Images\For All Functions\Search Image.png" />
+    <Content Include="Images\For All Functions\Side Bar\Employee.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Event.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Inventory.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Menu.png" />
+    <Content Include="Images\For All Functions\Side Bar\Timetable.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Student.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Exam.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Payment.ico" />
+    <Content Include="Images\For All Functions\Side Bar\User.ico" />
+    <Content Include="Images\For All Functions\Side Bar\Library.ico" />
+    <Content Include="Images\Payment Management\Payment Management Background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

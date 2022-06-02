@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Obadaella_VidyalayaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="Class_ID" />
+          </Key>
+          <Property Name="Class_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Class_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Attendance">
+          <Key>
+            <PropertyRef Name="ATTENDID" />
+          </Key>
+          <Property Name="ATTENDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DESIGNATION" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DATE" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Register">
+          <Key>
+            <PropertyRef Name="EMPCODE" />
+          </Key>
+          <Property Name="EMPNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNAME" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDESIGNATION" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPNIC" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPADDRESS" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPGENDER" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDOB" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPCONTACT" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPEMAIL" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPDATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Tasks">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPCODE" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EMPLOYEENAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TASKNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TASKDATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeSalaryDetails">
+          <Key>
+            <PropertyRef Name="EmpPayID" />
+          </Key>
+          <Property Name="EmpSalNo" Type="int" Nullable="false" />
+          <Property Name="EmpPayID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="50" />
+          <Property Name="Bank" Type="varchar" MaxLength="250" />
+          <Property Name="Branch" Type="varchar" MaxLength="250" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="Basic" Type="int" />
+          <Property Name="Allowances" Type="int" />
+          <Property Name="Loan" Type="int" />
+          <Property Name="TotalSalary" Type="int" />
+        </EntityType>
+        <EntityType Name="Events_Create">
+          <Key>
+            <PropertyRef Name="EVENTNO" />
+          </Key>
+          <Property Name="EVENTNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EVENTID" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EVENTNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EVENTVENUE" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EVENTDISCRIPTION" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hall">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Hall_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hall_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Notice_Create">
+          <Key>
+            <PropertyRef Name="NOTICENO" />
+          </Key>
+          <Property Name="NOTICENO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOTICEID" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="NOTICE" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="int" Nullable="false" />
+          <Property Name="S_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sinhala" Type="int" />
+          <Property Name="Buddhism" Type="int" />
+          <Property Name="Maths" Type="int" />
+          <Property Name="Science" Type="int" />
+          <Property Name="English" Type="int" />
+          <Property Name="Easthetic" Type="int" />
+          <Property Name="Total" Type="int" />
+          <Property Name="Average" Type="int" />
+          <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StudentPayment">
+          <Key>
+            <PropertyRef Name="StudentPayNo" />
+          </Key>
+          <Property Name="StudentPayNo" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentName" Type="varchar" MaxLength="250" />
+          <Property Name="StudentGrade" Type="varchar" MaxLength="50" />
+          <Property Name="ExamFee" Type="varchar" MaxLength="50" />
+          <Property Name="FacilityFee" Type="varchar" MaxLength="50" />
+          <Property Name="TotalFee" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Timetable">
+          <Key>
+            <PropertyRef Name="T_id" />
+          </Key>
+          <Property Name="T_id" Type="int" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="A" Type="nvarchar" MaxLength="50" />
+          <Property Name="B" Type="nvarchar" MaxLength="50" />
+          <Property Name="C" Type="nvarchar" MaxLength="50" />
+          <Property Name="D" Type="nvarchar" MaxLength="50" />
+          <Property Name="E" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TT">
+          <Key>
+            <PropertyRef Name="ClassPeriod" />
+          </Key>
+          <Property Name="ClassPeriod" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Monday" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tuesday" Type="nvarchar" MaxLength="20" />
+          <Property Name="Wednesday" Type="nvarchar" MaxLength="20" />
+          <Property Name="Thursday" Type="nvarchar" MaxLength="20" />
+          <Property Name="Friday" Type="nvarchar" MaxLength="20" />
+          <Property Name="CountP" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="EMPLOYEEID" />
+          </Key>
+          <Property Name="USERNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPLOYEEID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Obadaella_VidyalayaModelStoreContainer">
+          <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Attendance" EntityType="Self.Employee_Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Register" EntityType="Self.Employee_Register" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Tasks" EntityType="Self.Employee_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSalaryDetails" EntityType="Self.EmployeeSalaryDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events_Create" EntityType="Self.Events_Create" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hall" EntityType="Self.Hall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notice_Create" EntityType="Self.Notice_Create" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentPayment" EntityType="Self.StudentPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Timetable" EntityType="Self.Timetable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TT" EntityType="Self.TT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users_Table" EntityType="Self.Users_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Obadaella_VidyalayaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="Class_ID" />
+          </Key>
+          <Property Name="Class_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Class_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeSalaryDetail">
+          <Key>
+            <PropertyRef Name="EmpPayID" />
+          </Key>
+          <Property Name="EmpSalNo" Type="Int32" Nullable="false" />
+          <Property Name="EmpPayID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bank" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Basic" Type="Int32" />
+          <Property Name="Allowances" Type="Int32" />
+          <Property Name="Loan" Type="Int32" />
+          <Property Name="TotalSalary" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Events_Create">
+          <Key>
+            <PropertyRef Name="EVENTNO" />
+          </Key>
+          <Property Name="EVENTNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EVENTID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EVENTNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EVENTVENUE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EVENTDISCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hall">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Hall_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hall_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Notice_Create">
+          <Key>
+            <PropertyRef Name="NOTICENO" />
+          </Key>
+          <Property Name="NOTICENO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOTICEID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NOTICE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="R_ID" />
+          </Key>
+          <Property Name="R_ID" Type="Int32" Nullable="false" />
+          <Property Name="S_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sinhala" Type="Int32" />
+          <Property Name="Buddhism" Type="Int32" />
+          <Property Name="Maths" Type="Int32" />
+          <Property Name="Science" Type="Int32" />
+          <Property Name="English" Type="Int32" />
+          <Property Name="Easthetic" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="Average" Type="Int32" />
+          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StudentPayment">
+          <Key>
+            <PropertyRef Name="StudentPayNo" />
+          </Key>
+          <Property Name="StudentPayNo" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StudentGrade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExamFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalFee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Timetable">
+          <Key>
+            <PropertyRef Name="T_id" />
+          </Key>
+          <Property Name="T_id" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="E" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TT">
+          <Key>
+            <PropertyRef Name="ClassPeriod" />
+          </Key>
+          <Property Name="ClassPeriod" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Monday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tuesday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Wednesday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Thursday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Friday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountP" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Obadaella_VidyalayaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="Self.Class" />
+          <EntitySet Name="EmployeeSalaryDetails" EntityType="Self.EmployeeSalaryDetail" />
+          <EntitySet Name="Events_Create" EntityType="Self.Events_Create" />
+          <EntitySet Name="Halls" EntityType="Self.Hall" />
+          <EntitySet Name="Notice_Create" EntityType="Self.Notice_Create" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <EntitySet Name="StudentPayments" EntityType="Self.StudentPayment" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Timetables" EntityType="Self.Timetable" />
+          <EntitySet Name="TTs" EntityType="Self.TT" />
+          <EntitySet Name="Employee_Tasks" EntityType="Obadaella_VidyalayaModel.Employee_Tasks" />
+          <EntitySet Name="Employee_Attendance" EntityType="Obadaella_VidyalayaModel.Employee_Attendance" />
+          <EntitySet Name="Employee_Register" EntityType="Obadaella_VidyalayaModel.Employee_Register" />
+          <EntitySet Name="Users_Table" EntityType="Obadaella_VidyalayaModel.Users_Table" />
+        </EntityContainer>
+        <EntityType Name="Employee_Tasks">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="TASKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEENAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TASKNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TASKDATE" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee_Attendance">
+          <Key>
+            <PropertyRef Name="ATTENDID" />
+          </Key>
+          <Property Name="ATTENDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EMPNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DESIGNATION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee_Register">
+          <Key>
+            <PropertyRef Name="EMPCODE" />
+          </Key>
+          <Property Name="EMPNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPCODE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDESIGNATION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPNIC" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPADDRESS" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPGENDER" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDOB" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPCONTACT" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPEMAIL" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EMPDATE" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="EMPLOYEEID" />
+          </Key>
+          <Property Name="USERNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPLOYEEID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Obadaella_VidyalayaModelStoreContainer" CdmEntityContainer="Obadaella_VidyalayaEntities">
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+                <ScalarProperty Name="Class_Name" ColumnName="Class_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSalaryDetails">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.EmployeeSalaryDetail">
+              <MappingFragment StoreEntitySet="EmployeeSalaryDetails">
+                <ScalarProperty Name="EmpSalNo" ColumnName="EmpSalNo" />
+                <ScalarProperty Name="EmpPayID" ColumnName="EmpPayID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Basic" ColumnName="Basic" />
+                <ScalarProperty Name="Allowances" ColumnName="Allowances" />
+                <ScalarProperty Name="Loan" ColumnName="Loan" />
+                <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events_Create">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Events_Create">
+              <MappingFragment StoreEntitySet="Events_Create">
+                <ScalarProperty Name="EVENTNO" ColumnName="EVENTNO" />
+                <ScalarProperty Name="EVENTID" ColumnName="EVENTID" />
+                <ScalarProperty Name="EVENTNAME" ColumnName="EVENTNAME" />
+                <ScalarProperty Name="EVENTVENUE" ColumnName="EVENTVENUE" />
+                <ScalarProperty Name="EVENTDISCRIPTION" ColumnName="EVENTDISCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Halls">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Hall">
+              <MappingFragment StoreEntitySet="Hall">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Hall_id" ColumnName="Hall_id" />
+                <ScalarProperty Name="Hall_name" ColumnName="Hall_name" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notice_Create">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Notice_Create">
+              <MappingFragment StoreEntitySet="Notice_Create">
+                <ScalarProperty Name="NOTICENO" ColumnName="NOTICENO" />
+                <ScalarProperty Name="NOTICEID" ColumnName="NOTICEID" />
+                <ScalarProperty Name="NOTICE" ColumnName="NOTICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Result">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+                <ScalarProperty Name="S_ID" ColumnName="S_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Sinhala" ColumnName="Sinhala" />
+                <ScalarProperty Name="Buddhism" ColumnName="Buddhism" />
+                <ScalarProperty Name="Maths" ColumnName="Maths" />
+                <ScalarProperty Name="Science" ColumnName="Science" />
+                <ScalarProperty Name="English" ColumnName="English" />
+                <ScalarProperty Name="Easthetic" ColumnName="Easthetic" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Average" ColumnName="Average" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentPayments">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.StudentPayment">
+              <MappingFragment StoreEntitySet="StudentPayment">
+                <ScalarProperty Name="StudentPayNo" ColumnName="StudentPayNo" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentGrade" ColumnName="StudentGrade" />
+                <ScalarProperty Name="ExamFee" ColumnName="ExamFee" />
+                <ScalarProperty Name="FacilityFee" ColumnName="FacilityFee" />
+                <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Timetables">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Timetable">
+              <MappingFragment StoreEntitySet="Timetable">
+                <ScalarProperty Name="T_id" ColumnName="T_id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="E" ColumnName="E" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TTs">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.TT">
+              <MappingFragment StoreEntitySet="TT">
+                <ScalarProperty Name="ClassPeriod" ColumnName="ClassPeriod" />
+                <ScalarProperty Name="Monday" ColumnName="Monday" />
+                <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+                <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+                <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+                <ScalarProperty Name="Friday" ColumnName="Friday" />
+                <ScalarProperty Name="CountP" ColumnName="CountP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Tasks">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Tasks">
+              <MappingFragment StoreEntitySet="Employee_Tasks">
+                <ScalarProperty Name="TASKDATE" ColumnName="TASKDATE" />
+                <ScalarProperty Name="TASKNAME" ColumnName="TASKNAME" />
+                <ScalarProperty Name="EMPLOYEENAME" ColumnName="EMPLOYEENAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Attendance">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Attendance">
+              <MappingFragment StoreEntitySet="Employee_Attendance">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="ATTENDID" ColumnName="ATTENDID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Register">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Employee_Register">
+              <MappingFragment StoreEntitySet="Employee_Register">
+                <ScalarProperty Name="EMPDATE" ColumnName="EMPDATE" />
+                <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+                <ScalarProperty Name="EMPCONTACT" ColumnName="EMPCONTACT" />
+                <ScalarProperty Name="EMPDOB" ColumnName="EMPDOB" />
+                <ScalarProperty Name="EMPGENDER" ColumnName="EMPGENDER" />
+                <ScalarProperty Name="EMPADDRESS" ColumnName="EMPADDRESS" />
+                <ScalarProperty Name="EMPNIC" ColumnName="EMPNIC" />
+                <ScalarProperty Name="EMPDESIGNATION" ColumnName="EMPDESIGNATION" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+                <ScalarProperty Name="EMPNO" ColumnName="EMPNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users_Table">
+            <EntityTypeMapping TypeName="Obadaella_VidyalayaModel.Users_Table">
+              <MappingFragment StoreEntitySet="Users_Table">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="USERNO" ColumnName="USERNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

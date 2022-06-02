@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="379e0ef3cfb04111ac60a96aaeb408c3" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Class" Width="1.5" PointX="2.25" PointY="10.125" IsExpanded="true" FillColor="128, 128, 255" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.EmployeeSalaryDetail" Width="1.875" PointX="0.625" PointY="4.125" IsExpanded="true" FillColor="Fuchsia" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Events_Create" Width="1.5" PointX="0.625" PointY="7.625" IsExpanded="true" FillColor="DarkTurquoise" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Hall" Width="1.5" PointX="5.125" PointY="4.125" IsExpanded="true" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Notice_Create" Width="1.5" PointX="4.5" PointY="7.625" IsExpanded="true" FillColor="DarkTurquoise" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Result" Width="1.5" PointX="7" PointY="4.125" IsExpanded="true" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.StudentPayment" Width="1.75" PointX="2.875" PointY="4.125" IsExpanded="true" FillColor="Fuchsia" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.sysdiagram" Width="1.5" PointX="2.625" PointY="7.625" IsExpanded="true" FillColor="DarkTurquoise" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Timetable" Width="1.5" PointX="8.875" PointY="4.125" IsExpanded="true" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.TT" Width="1.5" PointX="0.5" PointY="10.125" IsExpanded="true" FillColor="128, 128, 255" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Employee_Tasks" Width="1.5" PointX="4.75" PointY="0.75" FillColor="Yellow" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Employee_Attendance" Width="1.875" PointX="2.625" PointY="0.75" FillColor="Yellow" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Employee_Register" Width="1.5" PointX="0.625" PointY="0.75" FillColor="Yellow" />
+        <EntityTypeShape EntityType="Obadaella_VidyalayaModel.Users_Table" Width="1.5" PointX="6.5" PointY="0.75" FillColor="Red" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
