@@ -19,3 +19,8 @@ This desktop application is very useful for school data management. This applica
   SQL Server
   Crystal Report
 ``` 
+
+```
+  IT20614676 - Sandeepa U.W.P.S
+  IT20617714 - Wijayawardhana D.S
+```
