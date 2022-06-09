@@ -28,7 +28,6 @@ namespace Obadaella_Vidyalaya
             password = p;
         }
 
-//-----------------------------------------------------------------------------------------------------------
 //Navigation
         //Arrow Icon
         private void backArrowET_Click(object sender, EventArgs e)
@@ -45,7 +44,7 @@ namespace Obadaella_Vidyalaya
             EmployeeHomePage empHome = new EmployeeHomePage();
             empHome.Show();
         }
-//-------------------------------------------------------------------------------------------------------------
+
 //CRUD
         //Cancel btn
         private void btnCancel_Click(object sender, EventArgs e)
